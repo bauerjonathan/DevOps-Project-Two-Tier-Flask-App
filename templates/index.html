@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prashant | Flask App 🚀</title>
+    <title>Jonathan | Flask App 🚀</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -163,29 +163,32 @@
     <div class="container">
         <!-- Profile photo -->
         <div class="profile-photo">
-            <img src="1.png" alt="Prashant Photo">
+            <img src="1.png" alt="Jonathan Bauer Photo">
         </div>
 
         <!-- Content -->
         <div class="content">
             <div class="header">
-                <h1>Prashant Gohil | DevOps Enthusiast</h1>
-                <p>Student | Aspiring Cloud & DevOps Engineer</p>
+                <h1>Jonathan Bauer | IT Consultant & DevOps</h1>
+                <p>Sales Manager / IT-Berater bei Grasenhiller InnoTech GmbH</p>
             </div>
 
             <div class="about">
                 <h2>About Me</h2>
-                <p>Hi, I'm <b>Prashant</b> 👋, a student and aspiring Cloud & DevOps engineer.</p>
+                <p>Hi, ich bin <b>Jonathan</b> 👋, IT-Berater mit Fokus auf Managed Services, IT-Security und
+                    Cloud-Lösungen.</p>
                 <p style="margin-top:10px;">
-                    <b>Project:</b> I have deployed a 2-tier Flask application (Flask + MySQL) on AWS EC2 using Docker.  
-                    I used Docker Compose to manage both containers with volumes and a custom network.  
-                    The source code is hosted on GitHub, and Jenkins is integrated to set up a CI/CD pipeline for automated deployment.
+                    <b>Projekt:</b> Ich habe eine 2-Tier Flask-Anwendung (Flask + MySQL) auf Microsoft Azure deployt,
+                    containerisiert mit Docker.
+                    Docker Compose orchestriert beide Container inklusive Volumes und einem eigenen Netzwerk.
+                    Der Quellcode liegt auf GitHub, Jenkins übernimmt die CI/CD-Pipeline für automatisierte Deployments
+                    – vom Push bis zum laufenden Container.
                 </p>
             </div>
 
             <div class="messages">
                 {% for message in messages %}
-                    <p>{{ message[0] }}</p>
+                <p>{{ message[0] }}</p>
                 {% endfor %}
             </div>
 
@@ -198,8 +201,8 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $("#messageForm").on("submit", function(event) {
+        $(document).ready(function () {
+            $("#messageForm").on("submit", function (event) {
                 event.preventDefault();
                 let messageInput = $("input[name='new_message']");
                 let message = messageInput.val().trim();
@@ -213,13 +216,13 @@
                     url: "/submit",
                     type: "POST",
                     data: { new_message: message },
-                    success: function(response) {
+                    success: function (response) {
                         if (response && response.message) {
                             $(".messages").append("<p>" + response.message + "</p>");
                             messageInput.val("");
                         }
                     },
-                    error: function(xhr, status, error) {
+                    error: function (xhr, status, error) {
                         console.error("AJAX Error:", status, error);
                     }
                 });
@@ -227,4 +230,5 @@
         });
     </script>
 </body>
+
 </html>
